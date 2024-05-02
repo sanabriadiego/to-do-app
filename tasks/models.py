@@ -8,4 +8,4 @@ class Task(models.Model):
     important = models.BooleanField(default=False)
     completed = models.BooleanField(default=False)
     def __str__(self):
-        return str(self.title) + " - " + self.creation_date.strftime("%d/%m/%Y, %H:%M:%S")
+        return str(self.title)
