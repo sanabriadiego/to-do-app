@@ -1,10 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Pending Tasks</h1>
-<ul>
+<h1 class="m-3 text-center">All Tasks</h1>
+<ul class="p-4 list-group">
     {% for task in tasks %}
-    <li><a href="{% url 'task_detail' task.id %}">{{task.title}}</a></li>
+    {% if task.important %}
+    <li class="list-group-item"><a class="text-decoration-none text-danger" href="{% url 'task_detail' task.id %}">{{task.title}} - {{task.description}}</a></li>
+    {% else %}
+    <li class="list-group-item"><a class="text-decoration-none" href="{% url 'task_detail' task.id %}">{{task.title}} - {{task.description}}</a></li>
+    {% endif %}
     {% endfor %}
 </ul>
 {% endblock %}

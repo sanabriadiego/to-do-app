@@ -8,7 +8,7 @@ def home(request):
     return render(request, "index.html")
 
 def all_tasks(request):
-    tasks = Task.objects.all()
+    tasks = Task.objects.filter(completed=False)
     return render(request, "tasks.html", {
         'tasks': tasks
     })

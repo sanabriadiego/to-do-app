@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Completed Tasks</h1>
-<ul>
+<h1 class="m-3 text-center">Completed Tasks</h1>
+<ul class="p-4 list-group">
     {% for task in tasks %}
-    <li>{{task.title}}</li>
+    <li class="list-group-item">{{task.title}}</li>
     {% endfor %}
 </ul>
 {% endblock %}
